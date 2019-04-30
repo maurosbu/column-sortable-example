@@ -1,12 +1,14 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <div class="container">
-    @sortablelink('detail.phone_number', trans('column-sortable.phone'))
-    @sortablelink('id', trans('column-sortable.id'), ['joe' => 'doe', 'jane' => 'doe'], ['class' => 'abc', 'rel' => 'nofollow', 'disabled' => 'disabled'])
-    @sortablelink('name', 'Name')
-    @sortablelink('nick_name', 'nick')
-    @sortablelink('email')
-    @sortablelink('address')
     <table>
+        <tr>
+            <th>@sortablelink('detail.phone_number', trans('column-sortable.phone'))</th>
+            <th>@sortablelink('id', trans('column-sortable.id'), ['joe' => 'doe', 'jane' => 'doe'], ['class' => 'abc', 'rel' => 'nofollow', 'disabled' => 'disabled'])</th>
+            <th>@sortablelink('name', 'Name')</th>
+            <th>@sortablelink('nick_name', 'nick')</th>
+            <th>@sortablelink('email')</th>
+            <th>@sortablelink('address')</th>
+        </tr>
         @foreach ($users as $user)
             <tr>
                 <td>{{ $user->detail->phone_number }}</td>
