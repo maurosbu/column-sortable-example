@@ -22,7 +22,11 @@ class User extends Model
      *
      * @var array
      */
-    public $sortableAs = ['nick_name'];
+    public $sortableAs = [
+        'nick_name',
+        'projects_count',
+        'top_rating_projects_count',
+    ];
 
     /**
      * The attributes that are mass assignable.
@@ -63,5 +67,13 @@ class User extends Model
     public function details()
     {
         return $this->hasMany(UserDetail::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
     }
 }

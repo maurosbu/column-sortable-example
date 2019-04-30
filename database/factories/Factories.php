@@ -1,5 +1,6 @@
 <?php
 
+use App\UserDetail;
 use Faker\Generator as Faker;
 
 /*
@@ -24,5 +25,12 @@ $factory->define(App\UserDetail::class, function (Faker $faker) {
     return [
         'phone_number' => $faker->phoneNumber,
         'address' => $faker->address
+    ];
+});
+
+$factory->define(App\Project::class, function (Faker $faker) {
+    return [
+        'name' => $faker->sentence,
+        'rating' => rand(1,5)
     ];
 });

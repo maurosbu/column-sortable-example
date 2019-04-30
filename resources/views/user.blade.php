@@ -8,6 +8,8 @@
             <th>@sortablelink('nick_name', 'nick')</th>
             <th>@sortablelink('email')</th>
             <th>@sortablelink('address')</th>
+            <th>@sortablelink('projects_count')</th>
+            <th>@sortablelink('top_rating_projects_count')</th>
         </tr>
         @foreach ($users as $user)
             <tr>
@@ -17,6 +19,8 @@
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->detail->address }}</td>
+                <td>{{ $user->projects_count }}</td>
+                <td>{{ $user->top_rating_projects_count }}</td>
             </tr>
         @endforeach
     </table>
